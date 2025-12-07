@@ -28,13 +28,13 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           
-          # ☢️ NUCLEAR FIRE PALETTE ☢️
-          # 0 (Empty)  = #450a0a (Dark Magma Floor - VISIBLE)
-          # 1 (Low)    = #ff4d00 (Neon Orange - INSTANT FIRE)
-          # 2 (Med)    = #ff9500 (Bright Orange)
-          # 3 (High)   = #ffdd00 (Sun Yellow)
+          # ☢️ SUPERNOVA FIRE PALETTE ☢️
+          # 0 (Empty)  = #1a0505 (Void Ash)
+          # 1 (Low)    = #5c1010 (Deep Ember)
+          # 2 (Med)    = #ff4500 (Blazing Fire)
+          # 3 (High)   = #ffaa00 (Solar Flare)
           # 4 (Max)    = #ffffff (White Hot Plasma)
-          plugin_isocalendar_colors: "#450a0a,#ff4d00,#ff9500,#ffdd00,#ffffff"
+          plugin_isocalendar_colors: "#1a0505,#5c1010,#ff4500,#ffaa00,#ffffff"
 
       # ----------------------------------------------------------------
       # JOB 2: Generate the Stats Dashboard (Langs + Stats)
