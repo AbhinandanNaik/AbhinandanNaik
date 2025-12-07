@@ -7,10 +7,10 @@
     "strongColor": "#ffffff",
     "weakColor": "#ff4500",
     "radarColor": "#ff4500",
-    "l0Color": "#2f0a0a",
-    "l1Color": "#ff4500",
-    "l2Color": "#ff8c00",
-    "l3Color": "#ffd700",
+    "l0Color": "#2d0a0a",
+    "l1Color": "#ff5500",
+    "l2Color": "#ff9900",
+    "l3Color": "#ffff00",
     "l4Color": "#ffffff"
   }
 ]
