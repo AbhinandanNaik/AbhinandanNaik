@@ -1,0 +1,16 @@
+[
+  {
+    "type": "isometric",
+    "fileName": "profile-night-fire.svg",
+    "backgroundColor": "#0d1117",
+    "foregroundColor": "#ffffff",
+    "strongColor": "#ff0000",
+    "weakColor": "#ffeda0",
+    "radarColor": "#ff0000",
+    "l0Color": "#161b22",
+    "l1Color": "#ffecd2",
+    "l2Color": "#fcb69f",
+    "l3Color": "#ff6b6b",
+    "l4Color": "#c70039"
+  }
+]
