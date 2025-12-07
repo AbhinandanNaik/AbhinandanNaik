@@ -2,15 +2,29 @@
   {
     "type": "isometric",
     "fileName": "profile-night-fire.svg",
-    "backgroundColor": "#0d1117",
+    "backgroundColor": "#000000",
     "foregroundColor": "#ffffff",
     "strongColor": "#ffffff",
     "weakColor": "#ff4500",
     "radarColor": "#ff4500",
-    "l0Color": "#2d0a0a",
-    "l1Color": "#ff5500",
-    "l2Color": "#ff9900",
-    "l3Color": "#ffff00",
+    "l0Color": "#4a0e0e", 
+    "l1Color": "#ff4500",
+    "l2Color": "#ff8800",
+    "l3Color": "#ffcc00",
+    "l4Color": "#ffffff"
+  },
+  {
+    "type": "isometric",
+    "fileName": "profile-night-fire.gif", 
+    "backgroundColor": "#000000",
+    "foregroundColor": "#ffffff",
+    "strongColor": "#ffffff",
+    "weakColor": "#ff4500",
+    "radarColor": "#ff4500",
+    "l0Color": "#4a0e0e",
+    "l1Color": "#ff4500",
+    "l2Color": "#ff8800",
+    "l3Color": "#ffcc00",
     "l4Color": "#ffffff"
   }
 ]
