@@ -60,14 +60,10 @@
 
 <br/>
 
-<h3 align="center">🔥 Contribution Trail</h3>
+<h3 align="center">🔥 Contribution Inferno</h3>
 <div align="center">
-  <p><i>My contribution history, ablaze!</i></p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-snake/snake-fire.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./profile-snake/snake-fire.svg">
-    <img alt="Fire Snake" src="./profile-snake/snake-fire.svg" width="100%" />
-  </picture>
+  <p><i>My commits visualized as rising heat.</i></p>
+  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-3d-contrib/profile-night-fire.svg" alt="Fire Graph" width="100%" />
 </div>
 <br/>
 
