@@ -2,7 +2,7 @@ name: GitHub-Profile-Summary-Cards
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs every 24 hours
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -14,6 +14,9 @@ jobs:
       
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # <--- THIS IS THE FIX (Fetches full history)
+          
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
