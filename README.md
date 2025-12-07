@@ -62,30 +62,23 @@
 
 <h3 align="center">🔥 Contribution Inferno</h3>
 <div align="center">
-  <p><i>My contribution activity visualized as a magma field.</i></p>
-  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-3d-contrib/fire-city.svg" alt="Fire Graph" width="100%" />
+  <p><i>My contribution activity visualized as a radioactive magma field.</i></p>
+  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/fire-city.svg" alt="Fire Graph" width="100%" />
 </div>
 
 <br/>
 
+<h3 align="center">📊 System Analytics</h3>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-summary-card-output/radical/0-profile-details.svg" alt="stats graph" />
+  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/stats-dashboard.svg" alt="Stats Dashboard" width="100%" />
   
   <br/><br/>
   
-  <table>
-    <tr>
-      <td align="center" style="border: none;">
-         <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-summary-card-output/radical/1-repos-per-language.svg" width="300" alt="languages" />
-      </td>
-      <td align="center" style="border: none;">
-         <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=ff5500&currStreakNum=ffcc00&fire=ff5500" width="300" alt="streak graph" />
-      </td>
-    </tr>
-  </table>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=ff5500&currStreakNum=ffcc00&fire=ff5500" width="80%" alt="streak graph" />
 </div>
 
 <br/>
+
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:b20a2c,100:ff5500&height=100&section=footer&text=Deploying%20Fire%20Code&fontSize=25&fontColor=ffffff" width="100%" />
 </div>
