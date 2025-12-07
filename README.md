@@ -63,14 +63,27 @@
 <h3 align="center">🏙️ Contribution Architecture</h3>
 <div align="center">
   <p><i>My code contributions visualized as a 3D city block.</i></p>
- <img src="https://github.com/AbhinandanNaik/AbhinandanNaik/blob/master/profile-summary-card-output/radical/icons.svg" height="160" alt="stats graph" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-season.svg">
+    <img alt="3D Contribution Graph" src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" />
+  </picture>
 </div>
-
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AbhinandanNaik&show_icons=true&theme=radical&hide_border=true&bg_color=1a1b27&title_color=E94057&icon_color=F8D866" height="160" alt="stats graph" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=E94057&currStreakNum=F8D866" height="160" alt="streak graph" />
+  <img src="./profile-summary-card-output/radical/profile-details.svg" alt="stats graph" />
+  <br/><br/>
+  <table>
+    <tr>
+      <td align="center" style="border: none;">
+         <img src="./profile-summary-card-output/radical/repos-per-language.svg" width="300" alt="languages" />
+      </td>
+      <td align="center" style="border: none;">
+         <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=E94057&currStreakNum=F8D866" width="300" alt="streak graph" />
+      </td>
+    </tr>
+  </table>
 </div>
 
 <br/>
