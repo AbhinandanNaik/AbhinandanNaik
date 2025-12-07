@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     name: generate-github-profile-summary-cards
     permissions:
-      contents: write
+      contents: write # explicit permission grant
       
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # <--- THIS IS THE FIX (Fetches full history)
+          fetch-depth: 0 # <--- THIS IS THE FIX. It downloads full history to prevent conflicts.
           
       - uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
