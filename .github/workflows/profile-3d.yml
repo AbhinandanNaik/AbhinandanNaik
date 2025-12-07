@@ -16,17 +16,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-          SETTING_JSON: fire-config.json # Ensures we use your "Severe Fire" colors
+          SETTING_JSON: fire-config.json
           
       - name: Commit & Push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          # 1. Add changes
           git add -A .
-          # 2. COMMIT FIRST (This fixes the error you saw)
-          git commit -m "generated fire graph" || echo "No changes to commit"
-          # 3. PULL SECOND (Now safe because changes are saved)
+          git commit -m "generated lava gif" || echo "No changes to commit"
           git pull origin main --rebase
-          # 4. PUSH
           git push origin main
