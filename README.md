@@ -1,57 +1,79 @@
-<h2 align="left">Hi 👋! My name is Abhinandan Naik and I'm a Software Developer.</h2>
-
-###
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2387,100:E94057&height=250&section=header&text=Abhinandan%20Naik&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=Backend%20Engineer%20%7C%20Algo%20Trading%20%7C%20DevOps&descAlignY=55&descSize=20" alt="header" width="100%" />
+</div>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AbhinandanNaik&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=AbhinandanNaik&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=E94057&center=true&vCenter=true&width=435&lines=Building+Scalable+Java+Backends;Architecting+Algo-Trading+Systems;Automating+with+DevOps+Pipelines;Crafting+Production-Grade+Code" alt="Typing SVG" />
+  </a>
 </div>
 
-###
+<br/>
 
-<img align="right" height="150" src="https://i.imgflip.com/65efzo.gif"  />
+<table align="center" style="border: none; border-collapse: collapse;">
+<tr>
+<td width="55%" align="left" style="border: none;">
 
-###
+### ⚡ Engineering Context
 
-<div align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="javascript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="typescript logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="react logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="30" alt="html5 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="30" alt="css3 logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="python logo"  />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" height="30" alt="csharp logo"  />
-</div>
+- 🔭 I’m currently building **High-frequency trading algorithms**.
+- 🌱 I’m deeply focused on **Spring Boot Microservices & Cloud Native**.
+- 🏗️ Working on **TrackWise** (Full stack monitoring system).
+- 💬 Ask me about **System Design, JVM Internals, and Kafka**.
+- 🎯 2025 Goal: **Mastering Kubernetes & Rust**.
 
-###
+</td>
+<td width="45%" align="center" style="border: none;">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Coding Animation" style="border-radius: 10px;"/>
+</td>
+</tr>
+</table>
 
-<div align="left">
-  <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
-  <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="instagram logo"  />
-  <img src="https://img.shields.io/static/v1?message=Twitch&logo=twitch&label=&color=9146FF&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="twitch logo"  />
-  <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="discord logo"  />
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo"  />
-  <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo"  />
-</div>
+<br/>
 
-###
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/output/pacman-contribution-graph.svg">
-</picture>
-
-###
+<h3 align="center">🛠️ Technical Arsenal</h3>
 
 <div align="center">
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=AbhinandanNaik.AbhinandanNaik&"  />
+  <table>
+    <tr>
+      <td align="center" width="90"><b>Backend</b></td>
+      <td align="center" width="90"><b>Frontend</b></td>
+      <td align="center" width="90"><b>DevOps</b></td>
+      <td align="center" width="90"><b>Data</b></td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://skillicons.dev/icons?i=java,spring,python,csharp&theme=dark&perline=2" />
+      </td>
+      <td align="center">
+        <img src="https://skillicons.dev/icons?i=react,ts,js,html&theme=dark&perline=2" />
+      </td>
+      <td align="center">
+        <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,linux,git&theme=dark&perline=2" />
+      </td>
+      <td align="center">
+        <img src="https://skillicons.dev/icons?i=postgres,mysql,redis,kafka&theme=dark&perline=2" />
+      </td>
+    </tr>
+  </table>
 </div>
 
-###
+<br/>
+
+<h3 align="center">🏙️ Contribution Architecture</h3>
+<div align="center">
+  <p><i>My code contributions visualized as a 3D city block.</i></p>
+  <img src="https://github.com/AbhinandanNaik/AbhinandanNaik/blob/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" width="100%" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=AbhinandanNaik&show_icons=true&theme=radical&hide_border=true&bg_color=1a1b27&title_color=E94057&icon_color=F8D866" height="160" alt="stats graph" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=E94057&currStreakNum=F8D866" height="160" alt="streak graph" />
+</div>
+
+<br/>
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2387,100:E94057&height=100&section=footer&text=Let's%20Build%20Something%20Scalable&fontSize=25&fontColor=ffffff" width="100%" />
+</div>
