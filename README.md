@@ -62,8 +62,8 @@
 
 <h3 align="center">🔥 Contribution Inferno</h3>
 <div align="center">
-  <p><i>My commits visualized as rising heat.</i></p>
-  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-3d-contrib/profile-night-fire.svg" alt="Fire Graph" width="100%" />
+  <p><i>My code activity visualized as a rotating lava lake.</i></p>
+  <img src="https://github.com/AbhinandanNaik/AbhinandanNaik/blob/main/profile-3d-contrib/profile-night-fire.gif?raw=true" alt="Lava Animation" width="100%" />
 </div>
 <br/>
 
