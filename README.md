@@ -63,7 +63,7 @@
 <h3 align="center">🏙️ Contribution Architecture</h3>
 <div align="center">
   <p><i>My code contributions visualized as a 3D city block.</i></p>
-  <img src="https://github.com/AbhinandanNaik/AbhinandanNaik/blob/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Contribution Graph" width="100%" />
+ <img src="https://github.com/AbhinandanNaik/AbhinandanNaik/blob/master/profile-summary-card-output/radical/icons.svg" height="160" alt="stats graph" />
 </div>
 
 <br/>
