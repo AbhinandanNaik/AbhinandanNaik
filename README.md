@@ -60,13 +60,13 @@
 
 <br/>
 
-<h3 align="center">🏙️ Contribution Architecture</h3>
+<h3 align="center">🔥 Contribution Trail</h3>
 <div align="center">
-  <p><i>My code contributions visualized as a 3D city block.</i></p>
+  <p><i>My contribution history, ablaze!</i></p>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-season.svg">
-    <img alt="3D Contribution Graph" src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="./profile-snake/snake-fire.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./profile-snake/snake-fire.svg">
+    <img alt="Fire Snake" src="./profile-snake/snake-fire.svg" width="100%" />
   </picture>
 </div>
 <br/>
