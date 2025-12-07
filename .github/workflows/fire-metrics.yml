@@ -1,10 +1,7 @@
-name: Fire Metrics
+name: Fire Graph
 on:
-  # Schedule daily updates
   schedule: [{cron: "0 0 * * *"}]
-  # (Optional) Run workflow manually
   workflow_dispatch:
-  # (Optional) Run on every push on the master branch
   push: {branches: ["master", "main"]}
 
 jobs:
@@ -15,23 +12,20 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
           token: ${{ secrets.GITHUB_TOKEN }}
           
-          # Options
           user: AbhinandanNaik
           template: classic
-          base: ""
+          base: "" 
           filename: fire-graph.svg
           
-          # The Isometric Calendar (The City)
+          # The Isometric City Plugin
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: half-year
+          plugin_isocalendar_duration: full-year
           
-          # THE FIRE PALETTE (Crucial Step)
-          # 0 (Empty)  = #2a0a0a (Dark Embers - Visible Floor)
-          # 1 (Low)    = #ff4500 (Bright Orange Fire)
-          # 2 (Medium) = #ff8800 (Deep Orange)
-          # 3 (High)   = #ffcc00 (Yellow)
-          # 4 (Extreme)= #ffffff (White Hot Plasma)
-          plugin_isocalendar_colors: "2a0a0a,#ff4500,#ff8800,#ffcc00,#ffffff"
+          # 🔴 HIGH CONTRAST FIRE PALETTE 🔴
+          # Color 1: #550000 (Bright Red-Brown) -> The Floor (Visible Magma Crust)
+          # Color 2: #ff4500 (Neon Orange)      -> 1 Commit (Instantly Burning)
+          # Color 3: #ffcc00 (Bright Yellow)    -> Medium Commits
+          # Color 4: #ffffff (White Hot)        -> High Commits
+          plugin_isocalendar_colors: "#550000,#ff4500,#ffcc00,#ffffff"
