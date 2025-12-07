@@ -62,9 +62,10 @@
 
 <h3 align="center">🔥 Contribution Inferno</h3>
 <div align="center">
-  <p><i>My code activity visualized as a rotating lava lake.</i></p>
-  <img src="https://github.com/AbhinandanNaik/AbhinandanNaik/blob/main/profile-3d-contrib/profile-night-fire.gif?raw=true" alt="Lava Animation" width="100%" />
+  <p><i>My commits visualized as rising magma.</i></p>
+  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-3d-contrib/profile-night-fire.svg" alt="Fire Graph" width="100%" />
 </div>
+
 <br/>
 
 <div align="center">
@@ -83,6 +84,7 @@
     </tr>
   </table>
 </div>
+
 <br/>
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2387,100:E94057&height=100&section=footer&text=Let's%20Build%20Something%20Scalable&fontSize=25&fontColor=ffffff" width="100%" />
