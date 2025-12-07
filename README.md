@@ -62,7 +62,7 @@
 
 <h3 align="center">🔥 Contribution Inferno</h3>
 <div align="center">
-  <p><i>My code activity visualized as a radioactive isometric city.</i></p>
+  <p><i>My contribution activity visualized as a magma field.</i></p>
   <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/fire-graph.svg" alt="Fire Graph" width="100%" />
 </div>
 
