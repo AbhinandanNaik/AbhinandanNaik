@@ -72,12 +72,14 @@
 <br/>
 
 <div align="center">
-  <img src="./profile-summary-card-output/radical/profile-details.svg" alt="stats graph" />
+  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-summary-card-output/radical/profile-details.svg" alt="stats graph" />
+  
   <br/><br/>
+  
   <table>
     <tr>
       <td align="center" style="border: none;">
-         <img src="./profile-summary-card-output/radical/repos-per-language.svg" width="300" alt="languages" />
+         <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-summary-card-output/radical/repos-per-language.svg" width="300" alt="languages" />
       </td>
       <td align="center" style="border: none;">
          <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=E94057&currStreakNum=F8D866" width="300" alt="streak graph" />
