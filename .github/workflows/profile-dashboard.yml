@@ -4,7 +4,7 @@ on:
   # 1. Run daily at midnight
   schedule: [{cron: "0 0 * * *"}]
   # 2. Run whenever you push to main
-  push: {branches: ["master", "main"]}
+  push: {branches: ["master", "main", "anti1"]}
   # 3. Allow manual trigger
   workflow_dispatch:
 
