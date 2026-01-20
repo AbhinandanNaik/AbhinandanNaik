@@ -20,7 +20,7 @@
 - 🌱 I’m deeply focused on **Spring Boot Microservices & Cloud Native**.
 - 🏗️ Working on **TrackWise** (Full stack monitoring system).
 - 💬 Ask me about **System Design, JVM Internals, and Kafka**.
-- 🎯 2025 Goal: **Mastering Kubernetes & Rust**.
+- 🎯 2026 Goal: **To Be Better**.
 
 </td>
 <td width="45%" align="center" style="border: none;">
