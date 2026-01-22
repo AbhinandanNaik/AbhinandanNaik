@@ -19,7 +19,6 @@
 - 🔭 I’m currently building **High-frequency trading algorithms**.
 - 🌱 I’m deeply focused on **Spring Boot Microservices & Cloud Native**.
 - 🏗️ Working on **TrackWise** (Full stack monitoring system).
-- 💬 Ask me about **System Design, JVM Internals, and Kafka**.
 - 🎯 2026 Goal: **To Be The Best Version of Myself.**.
 
 </td>
