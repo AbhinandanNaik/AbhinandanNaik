@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="100%" height="420">
+    <defs>
+        <!-- Background Grid Pattern -->
+        <pattern id="grid-top" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#12161f" stroke-width="1"/>
+        </pattern>
+        <!-- Glow filters -->
+        <filter id="glow-node-cyan" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="glow-node-pink" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="6" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <!-- Gradients -->
+        <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#7000ff" stop-opacity="0.15"/>
+            <stop offset="100%" stop-color="#7000ff" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;800&amp;display=swap');
+        
+        .bg {
+            fill: #090a0f;
+        }
+        .grid-overlay {
+            fill: url(#grid-top);
+        }
+        .core-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 16px;
+            fill: #ffffff;
+            letter-spacing: 1px;
+            text-anchor: middle;
+        }
+        .core-subtext {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            fill: #00f0ff;
+            text-anchor: middle;
+        }
+        .node-label {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 13px;
+            fill: #e1e4e8;
+            text-anchor: middle;
+        }
+        .node-tech {
+            font-family: 'Fira Code', monospace;
+            font-size: 9px;
+            fill: #8b949e;
+            text-anchor: middle;
+        }
+        
+        /* Connection lines with moving dash offset simulating packet flows */
+        @keyframes flow-left-right {
+            to {
+                stroke-dashoffset: -40;
+            }
+        }
+        .link-flow {
+            stroke-width: 1.5;
+            fill: none;
+            stroke-dasharray: 6 10;
+            animation: flow-left-right 2s linear infinite;
+        }
+        .cyan-flow {
+            stroke: #00f0ff;
+            filter: drop-shadow(0 0 2px #00f0ff);
+        }
+        .pink-flow {
+            stroke: #ff007f;
+            filter: drop-shadow(0 0 2px #ff007f);
+        }
+        .static-link {
+            stroke: #1b202c;
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        /* Rotating HUD rings */
+        @keyframes rotate-clockwise {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes rotate-counter {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+        .hud-circle-cw {
+            transform-origin: center;
+            animation: rotate-clockwise 20s linear infinite;
+        }
+        .hud-circle-ccw {
+            transform-origin: center;
+            animation: rotate-counter 12s linear infinite;
+        }
+        
+        /* Node pulsing effects */
+        @keyframes node-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        .pulsing-node {
+            transform-origin: center;
+            animation: node-pulse 3s ease-in-out infinite;
+        }
+    </style>
+
+    <!-- Background -->
+    <rect width="900" height="420" rx="12" class="bg"/>
+    <rect width="900" height="420" rx="12" class="grid-overlay"/>
+    <circle cx="450" cy="210" r="280" class="core-radial" fill="url(#center-glow)" />
+
+    <!-- Connection Lines / Infrastructure Links -->
+    <!-- Center to Top (Orchestration/Cloud) -->
+    <path d="M 450 210 L 450 70" class="static-link"/>
+    <path d="M 450 210 L 450 70" class="link-flow pink-flow" />
+
+    <!-- Center to Right Top (Data Streams) -->
+    <path d="M 450 210 L 690 130" class="static-link"/>
+    <path d="M 450 210 L 690 130" class="link-flow cyan-flow" />
+
+    <!-- Center to Right Bottom (Storage Engine) -->
+    <path d="M 450 210 L 690 290" class="static-link"/>
+    <path d="M 450 210 L 690 290" class="link-flow cyan-flow" />
+
+    <!-- Center to Bottom (Interfaces) -->
+    <path d="M 450 210 L 450 350" class="static-link"/>
+    <path d="M 450 210 L 450 350" class="link-flow pink-flow" />
+
+    <!-- Center to Left Bottom (Execution & Algo Engines) -->
+    <path d="M 450 210 L 210 290" class="static-link"/>
+    <path d="M 450 210 L 210 290" class="link-flow cyan-flow" />
+
+    <!-- Center to Left Top (Systems Architectures) -->
+    <path d="M 450 210 L 210 130" class="static-link"/>
+    <path d="M 450 210 L 210 130" class="link-flow cyan-flow" />
+
+
+    <!-- 1. Central Core Node: Core Engine Services -->
+    <g transform="translate(450, 210)">
+        <!-- Core Radiating Ring -->
+        <circle cx="0" cy="0" r="62" fill="none" stroke="#7000ff" stroke-width="1.5" stroke-dasharray="10 6" class="hud-circle-cw" />
+        <circle cx="0" cy="0" r="54" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="5 3" class="hud-circle-ccw" />
+        
+        <!-- Glowing Backplate -->
+        <circle cx="0" cy="0" r="45" fill="#0d111a" stroke="#7000ff" stroke-width="3" filter="url(#glow-node-cyan)"/>
+        
+        <text x="0" y="-5" class="core-text">CORE API</text>
+        <text x="0" y="15" class="core-subtext">JAVA / SPRING</text>
+    </g>
+
+
+    <!-- 2. Peripheral Node: Orchestration & Cloud (Top) -->
+    <g transform="translate(450, 70)" class="pulsing-node">
+        <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#ff007f" stroke-width="2" filter="url(#glow-node-pink)"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#ff007f" stroke-width="1" stroke-dasharray="4 4" class="hud-circle-cw"/>
+        <text x="0" y="55" class="node-label">ORCHESTRATION</text>
+        <text x="0" y="70" class="node-tech">DOCKER // K8S // AWS</text>
+    </g>
+
+
+    <!-- 3. Peripheral Node: Data Streams (Right Top) -->
+    <g transform="translate(690, 130)" class="pulsing-node">
+        <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="6 3" class="hud-circle-ccw"/>
+        <text x="0" y="55" class="node-label">EVENT STREAMING</text>
+        <text x="0" y="70" class="node-tech">KAFKA // REDIS QUEUE</text>
+    </g>
+
+
+    <!-- 4. Peripheral Node: Database / Storage Engine (Right Bottom) -->
+    <g transform="translate(690, 290)" class="pulsing-node">
+        <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="4 4" class="hud-circle-cw"/>
+        <text x="0" y="55" class="node-label">PERSISTENCE</text>
+        <text x="0" y="70" class="node-tech">POSTGRESQL // REDIS</text>
+    </g>
+
+
+    <!-- 5. Peripheral Node: Interface Ports (Bottom) -->
+    <g transform="translate(450, 350)" class="pulsing-node">
+        <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#ff007f" stroke-width="2" filter="url(#glow-node-pink)"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#ff007f" stroke-width="1" stroke-dasharray="8 4" class="hud-circle-ccw"/>
+        <text x="0" y="55" class="node-label">FRONTEND PORTALS</text>
+        <text x="0" y="70" class="node-tech">REACT // TS // JS</text>
+    </g>
+
+
+    <!-- 6. Peripheral Node: Algo Trading & Languages (Left Bottom) -->
+    <g transform="translate(210, 290)" class="pulsing-node">
+        <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="6 3" class="hud-circle-cw"/>
+        <text x="0" y="55" class="node-label">EXECUTION ENGINE</text>
+        <text x="0" y="70" class="node-tech">PYTHON // C# // ALGO</text>
+    </g>
+
+
+    <!-- 7. Peripheral Node: System Frameworks (Left Top) -->
+    <g transform="translate(210, 130)" class="pulsing-node">
+        <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="4 4" class="hud-circle-ccw"/>
+        <text x="0" y="55" class="node-label">SYSTEM ARCHITECT</text>
+        <text x="0" y="70" class="node-tech">MICROSERVICES // REST</text>
+    </g>
+
+    <!-- High-tech telemetry side panels (Decorative) -->
+    <g transform="translate(30, 45)" opacity="0.6">
+        <path d="M 0 0 L 0 50 L 30 50" fill="none" stroke="#00f0ff" stroke-width="1"/>
+        <rect x="5" y="5" width="4" height="4" fill="#ff007f"/>
+        <text x="15" y="15" font-family="monospace" font-size="8" fill="#8b949e">PORT.INGRESS: ON</text>
+        <text x="15" y="30" font-family="monospace" font-size="8" fill="#8b949e">SEC.SSH_PORT: 22</text>
+    </g>
+
+    <g transform="translate(840, 45)" opacity="0.6">
+        <path d="M 30 0 L 30 50 L 0 50" fill="none" stroke="#ff007f" stroke-width="1"/>
+        <rect x="21" y="5" width="4" height="4" fill="#00f0ff"/>
+        <text x="-65" y="15" font-family="monospace" font-size="8" fill="#8b949e">TOPOLOGY: ACTIVE</text>
+        <text x="-65" y="30" font-family="monospace" font-size="8" fill="#8b949e">NODES: STABLE</text>
+    </g>
+</svg>

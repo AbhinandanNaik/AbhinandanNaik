@@ -1,93 +1,68 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2387,100:E94057&height=250&section=header&text=Abhinandan%20Naik&fontSize=70&fontAlignY=35&animation=fadeIn&fontColor=ffffff&desc=Backend%20Engineer%20%7C%20Algo%20Trading%20%7C%20DevOps&descAlignY=55&descSize=20" alt="header" width="100%" />
-</div>
-
-<div align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com? font=Fira+Code&weight=600&size=22&duration=3000&pause=1000&color=E94057&center=true&vCenter=true&width=435&lines=Building+Scalable+Java+Backends;Architecting+Algo-Trading+Systems;Automating+with+DevOps+Pipelines;Crafting+Production-Grade+Code" alt="Typing SVG" />
-  </a>
+  <!-- Cyberpunk Animated HUD Header Banner -->
+  <img src="./assets/header_animation.svg" width="100%" alt="Abhinandan Naik Systems Console" />
 </div>
 
 <br/>
 
-<table align="center" style="border: none; border-collapse: collapse;">
-<tr>
-<td width="55%" align="left" style="border: none;">
-
-### ⚡ Engineering Context
-
-- 🔭 I’m currently building **High-frequency trading algorithms**.
-- 🌱 I’m deeply focused on **Spring Boot Microservices & Cloud Native**.
-- 🏗️ Working on **TrackWise** (Full stack monitoring system).
-- 🎯 2026 Goal: **To Be The Best Version of Myself.**.
-
-</td>
-<td width="45%" align="center" style="border: none;">
-  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Coding Animation" style="border-radius: 10px;"/>
-</td>
-</tr>
+<table align="center" style="border: none; border-collapse: collapse; width: 100%;">
+  <tr>
+    <td width="55%" align="left" style="border: none; padding-right: 20px; vertical-align: top;">
+      <h3>📡 Operations Telemetry</h3>
+      <ul>
+        <li>🔭 <b>Active Node:</b> Engineering high-frequency algorithmic trading systems to maximize latency efficiency.</li>
+        <li>🌱 <b>Core Focus:</b> Spring Boot microservices, cloud-native deployments, and event-driven data piping.</li>
+        <li>🏗️ <b>Mission Control:</b> Developing <b>TrackWise</b>, a unified telemetry monitoring solution for microservice fabrics.</li>
+        <li>🎯 <b>Vector 2026:</b> Engineering clean, scalable, and fail-safe system fabrics.</li>
+      </ul>
+    </td>
+    <td width="45%" align="center" style="border: none; vertical-align: middle;">
+      <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="100%" alt="Terminal Telemetry" style="border-radius: 8px; border: 1px solid #30363d;"/>
+    </td>
+  </tr>
 </table>
 
 <br/>
 
-<h3 align="center">🛠️ Technical Arsenal</h3>
-
+<h3 align="center">🔮 Skill Topology</h3>
 <div align="center">
-  <table>
-    <tr>
-      <td align="center" width="90"><b>Backend</b></td>
-      <td align="center" width="90"><b>Frontend</b></td>
-      <td align="center" width="90"><b>DevOps</b></td>
-      <td align="center" width="90"><b>Data</b></td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img src="https://skillicons.dev/icons?i=java,spring,python,csharp&theme=dark&perline=2" />
-      </td>
-      <td align="center">
-        <img src="https://skillicons.dev/icons?i=react,ts,js,html&theme=dark&perline=2" />
-      </td>
-      <td align="center">
-        <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,linux,git&theme=dark&perline=2" />
-      </td>
-      <td align="center">
-        <img src="https://skillicons.dev/icons?i=postgres,mysql,redis,kafka&theme=dark&perline=2" />
-      </td>
-    </tr>
-  </table>
+  <p><i>System infrastructure connections mapping my technology stack.</i></p>
+  <img src="./assets/systems_topology.svg" width="100%" alt="Systems Topology Map" />
+</div>
+
+<br/>
+
+<h3 align="center">📊 Telemetry Dashboard</h3>
+<div align="center">
+  <p><i>Live telemetry logs and GitHub statistics compiled dynamically.</i></p>
+  <img src="./assets/terminal_stats.svg" width="100%" alt="Live Telemetry Stats Console" />
 </div>
 
 <br/>
 
 <h3 align="center">🏙️ Contribution Architecture</h3>
 <div align="center">
-  <p><i>My code contributions visualized as a 3D city block.</i></p>
+  <p><i>A 3D isometric projection of system modifications over the past 365 cycles.</i></p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg">
     <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-season.svg">
-    <img alt="3D Contribution Graph" src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" />
+    <img alt="3D Contribution Graph" src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" style="border-radius: 8px; border: 1px solid #21262d;" />
   </picture>
 </div>
+
 <br/>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-summary-card-output/radical/0-profile-details.svg" alt="stats graph" />
-  
-  <br/><br/>
-  
-  <table>
-    <tr>
-      <td align="center" style="border: none;">
-         <img src="https://raw.githubusercontent.com/AbhinandanNaik/AbhinandanNaik/main/profile-summary-card-output/radical/1-repos-per-language.svg" width="300" alt="languages" />
-      </td>
-      <td align="center" style="border: none;">
-         <img src="https://github-readme-streak-stats.herokuapp.com/?user=AbhinandanNaik&theme=radical&hide_border=true&background=1a1b27&ring=E94057&currStreakNum=F8D866" width="300" alt="streak graph" />
-      </td>
-    </tr>
-  </table>
+  <!-- High-tech badges for contact and socials -->
+  <a href="https://linkedin.com/in/abhinandannaik" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
+  </a>
+  <a href="mailto:abhinandannaik@outlook.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
+  </a>
 </div>
 
 <br/>
-<div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2387,100:E94057&height=100&section=footer&text=Let's%20Build%20Something%20Scalable&fontSize=25&fontColor=ffffff" width="100%" />
+<div align="center" style="font-family: monospace; font-size: 10px; color: #8b949e; margin-top: 30px;">
+  <code>[ TERMINAL SESSION TERMINATED // SECURE OUTBOUND CONNECTION ]</code>
 </div>
