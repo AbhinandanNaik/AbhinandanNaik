@@ -43,6 +43,8 @@ jobs:
             echo "No changes in generated telemetry SVGs"
           else
             git commit -m "Auto-generate animated telemetry dashboards [skip ci]"
+            git reset --hard HEAD
+            git clean -fd
             git fetch origin main
             git rebase origin/main -X theirs
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
