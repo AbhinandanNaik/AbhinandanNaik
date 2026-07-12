@@ -133,7 +133,7 @@
             <text x="0" y="30" class="bar-label">Bugfixes (fix)</text>
             <rect x="130" y="22" width="100" height="7" rx="3.5" fill="#141923" />
             <rect x="130" y="22" width="5" height="7" rx="3.5" fill="#39ff14" />
-            <text x="240" y="30" class="bar-value" fill="#39ff14">2%</text>
+            <text x="240" y="30" class="bar-value" fill="#39ff14">3%</text>
             
             <!-- Performance -->
             <text x="0" y="50" class="bar-label">Performance (perf)</text>

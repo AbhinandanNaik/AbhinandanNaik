@@ -94,16 +94,16 @@
                 <text x="180" y="0" class="stat-number">AbhinandanNaik</text>
 
                 <text x="0" y="24" class="stat-lbl">SYSTEM_UPTIME:</text>
-                <text x="180" y="24" class="stat-number">2 Years (2024)</text>
+                <text x="180" y="24" class="stat-number">3 Years (2023)</text>
 
                 <text x="0" y="48" class="stat-lbl">REPOS_LOADED:</text>
-                <text x="180" y="48" class="stat-number">22 Active Clusters</text>
+                <text x="180" y="48" class="stat-number">25 Active Clusters</text>
 
                 <text x="0" y="72" class="stat-lbl">SYNC_COMMITS:</text>
-                <text x="180" y="72" class="stat-number" fill="#39ff14">235 Transports</text>
+                <text x="180" y="72" class="stat-number" fill="#39ff14">331 Transports</text>
 
                 <text x="0" y="96" class="stat-lbl">RATING_REPUTATION:</text>
-                <text x="180" y="96" class="stat-number">12 Stars // 5 Followers</text>
+                <text x="180" y="96" class="stat-number">0 Stars // 0 Followers</text>
             </g>
         </g>
 
