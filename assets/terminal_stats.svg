@@ -118,16 +118,16 @@
                 <text x="180" y="0" class="stat-val">AbhinandanNaik</text>
 
                 <text x="0" y="25" class="stat-label">SYSTEM_UPTIME:</text>
-                <text x="180" y="25" class="stat-val">2 Years (Established 2024)</text>
+                <text x="180" y="25" class="stat-val">3 Years (Established 2023)</text>
 
                 <text x="0" y="50" class="stat-label">DEPLOYED_REPOS:</text>
-                <text x="180" y="50" class="stat-val">22 Active Clusters</text>
+                <text x="180" y="50" class="stat-val">25 Active Clusters</text>
 
                 <text x="0" y="75" class="stat-label">COMMIT_VELOCITY:</text>
-                <text x="180" y="75" class="stat-val-highlight">235 Synchronized Nodes</text>
+                <text x="180" y="75" class="stat-val-highlight">322 Synchronized Nodes</text>
 
                 <text x="0" y="100" class="stat-label">REPUTATION_RATING:</text>
-                <text x="180" y="100" class="stat-val">12 Stars // 5 Telemetry Listeners</text>
+                <text x="180" y="100" class="stat-val">0 Stars // 0 Telemetry Listeners</text>
                 
                 <text x="0" y="125" class="stat-label">STACK_INTEGRITY:</text>
                 <text x="180" y="125" class="stat-val-highlight">100% HEALTHY (REST/HFT)</text>
