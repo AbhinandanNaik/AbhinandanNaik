@@ -57,6 +57,9 @@ class SvgGenerator:
             <stop offset="50%" stop-color="{c.get("accent")}"/>
             <stop offset="100%" stop-color="{c.get("secondary")}"/>
         </linearGradient>
+        <clipPath id="wave-clip">
+            <rect x="21" y="56" width="138" height="38" rx="3"/>
+        </clipPath>
     </defs>
 
     <style><![CDATA[
@@ -121,6 +124,55 @@ class SvgGenerator:
         .status-dot {{
             animation: status-blink 2s infinite;
         }}
+
+        /* Waveform and Thread grid telemetry animations */
+        @keyframes wave-move-1 {{
+            from {{ transform: translateX(0px); }}
+            to {{ transform: translateX(-120px); }}
+        }}
+        @keyframes wave-move-2 {{
+            from {{ transform: translateX(0px); }}
+            to {{ transform: translateX(120px); }}
+        }}
+        .wave-primary {{
+            animation: wave-move-1 3s linear infinite;
+        }}
+        .wave-secondary {{
+            animation: wave-move-2 4.5s linear infinite;
+        }}
+
+        @keyframes core-blink-cyan {{
+            0%, 100% {{ fill: {c.get("primary")}; filter: drop-shadow(0 0 1.5px {c.get("primary")}); }}
+            50% {{ fill: {c.get("grid")}; filter: none; }}
+        }}
+        @keyframes core-blink-pink {{
+            0%, 100% {{ fill: {c.get("secondary")}; filter: drop-shadow(0 0 1.5px {c.get("secondary")}); }}
+            40% {{ fill: {c.get("grid")}; filter: none; }}
+        }}
+        @keyframes core-blink-green {{
+            0%, 100% {{ fill: {c.get("status_ok")}; filter: drop-shadow(0 0 1.5px {c.get("status_ok")}); }}
+            60% {{ fill: {c.get("grid")}; filter: none; }}
+        }}
+        @keyframes core-blink-yellow {{
+            0%, 100% {{ fill: {c.get("status_warn")}; filter: drop-shadow(0 0 1.5px {c.get("status_warn")}); }}
+            70% {{ fill: {c.get("grid")}; filter: none; }}
+        }}
+        .core {{
+            stroke-width: 0.5;
+            stroke: {c.get("grid")};
+        }}
+        .core-p1 {{ animation: core-blink-cyan 2s infinite; animation-delay: 0.1s; }}
+        .core-p2 {{ animation: core-blink-cyan 3s infinite; animation-delay: 0.7s; }}
+        .core-s1 {{ animation: core-blink-pink 2.5s infinite; animation-delay: 0.3s; }}
+        .core-s2 {{ animation: core-blink-pink 3.5s infinite; animation-delay: 1.2s; }}
+        .core-ok {{ animation: core-blink-green 4s infinite; animation-delay: 0.5s; }}
+        .core-warn {{ animation: core-blink-yellow 1.8s infinite; animation-delay: 0.9s; }}
+
+        .telemetry-readout {{
+            font-family: 'Fira Code', monospace;
+            font-size: 9px;
+            fill: {c.get("text_muted")};
+        }}
     ]]></style>
 
     <rect width="900" height="260" rx="12" class="bg"/>
@@ -150,43 +202,55 @@ class SvgGenerator:
         </g>
     </g>
 
-    <!-- Right Frame: Conventional Commit Telemetry -->
+    <!-- Right Frame: Real-Time Systems Telemetry (Oscilloscope & Core LED matrix) -->
     <g transform="translate(540, 45)">
         <rect x="0" y="0" width="300" height="170" fill="{c.get("bg_terminal")}" stroke="{c.get("grid")}" stroke-width="1.5" rx="8" opacity="0.8"/>
         
-        <text x="20" y="25" class="section-hdr">ENGINEERING COMMITS TELEMETRY</text>
+        <text x="20" y="25" class="section-hdr">REAL-TIME THREAD FABRIC MONITOR</text>
         
-        <!-- Progress Bars representing conventional commits -->
-        <g transform="translate(20, 45)">
-            <!-- Features -->
-            <text x="0" y="10" class="bar-label">Features (feat)</text>
-            <rect x="130" y="2" width="100" height="7" rx="3.5" fill="{c.get("grid")}" />
-            <rect x="130" y="2" width="{max(int(feat), 5)}" height="7" rx="3.5" fill="{c.get("primary")}" filter="url(#glow-cyan)"/>
-            <text x="240" y="10" class="bar-value">{feat}%</text>
+        <!-- Oscilloscope Waveform Monitor -->
+        <text x="20" y="46" font-family="'Fira Code', monospace" font-size="8px" fill="{c.get("text_muted")}">OSCILLOSCOPE / CONCURRENT_LOAD</text>
+        <rect x="20" y="55" width="140" height="40" fill="#04060a" stroke="{c.get("grid")}" stroke-width="1" rx="4"/>
+        
+        <g clip-path="url(#wave-clip)" opacity="0.8">
+            <!-- Flowing Sine Wave 1 (Cyan) -->
+            <path d="M -120 75 Q -90 60 -60 75 T 0 75 T 60 75 T 120 75 T 180 75 T 240 75" fill="none" stroke="{c.get("primary")}" stroke-width="1.5" class="wave-primary" filter="url(#glow-cyan)"/>
+            <!-- Flowing Sine Wave 2 (Pink) -->
+            <path d="M -120 75 Q -90 90 -60 75 T 0 75 T 60 75 T 120 75 T 180 75 T 240 75" fill="none" stroke="{c.get("secondary")}" stroke-width="1" class="wave-secondary" filter="url(#glow-pink)"/>
+        </g>
+        
+        <!-- CPU Core Thread Grid (Blinking LEDs) -->
+        <text x="180" y="46" font-family="'Fira Code', monospace" font-size="8px" fill="{c.get("text_muted")}">CPU CORES</text>
+        
+        <g class="core-grid">
+            <!-- Row 0 -->
+            <rect class="core core-p1" x="180" y="55" width="12" height="8" rx="1.5"/>
+            <rect class="core core-p2" x="196" y="55" width="12" height="8" rx="1.5"/>
+            <rect class="core core-s1" x="212" y="55" width="12" height="8" rx="1.5"/>
+            <rect class="core core-ok" x="228" y="55" width="12" height="8" rx="1.5"/>
             
-            <!-- Bugfixes -->
-            <text x="0" y="30" class="bar-label">Bugfixes (fix)</text>
-            <rect x="130" y="22" width="100" height="7" rx="3.5" fill="{c.get("grid")}" />
-            <rect x="130" y="22" width="{max(int(fix), 5)}" height="7" rx="3.5" fill="{c.get("status_ok")}" />
-            <text x="240" y="30" class="bar-value" fill="{c.get("status_ok")}">{fix}%</text>
+            <!-- Row 1 -->
+            <rect class="core core-ok" x="180" y="69" width="12" height="8" rx="1.5"/>
+            <rect class="core core-s2" x="196" y="69" width="12" height="8" rx="1.5"/>
+            <rect class="core core-p2" x="212" y="69" width="12" height="8" rx="1.5"/>
+            <rect class="core core-s1" x="228" y="69" width="12" height="8" rx="1.5"/>
             
-            <!-- Performance -->
-            <text x="0" y="50" class="bar-label">Performance (perf)</text>
-            <rect x="130" y="42" width="100" height="7" rx="3.5" fill="{c.get("grid")}" />
-            <rect x="130" y="42" width="{max(int(perf), 5)}" height="7" rx="3.5" fill="{c.get("secondary")}" filter="url(#glow-pink)"/>
-            <text x="240" y="50" class="bar-value" fill="{c.get("secondary")}">{perf}%</text>
-
-            <!-- DevOps -->
-            <text x="0" y="70" class="bar-label">DevOps (ci/cd)</text>
-            <rect x="130" y="62" width="100" height="7" rx="3.5" fill="{c.get("grid")}" />
-            <rect x="130" y="62" width="{max(int(devops), 5)}" height="7" rx="3.5" fill="{c.get("accent")}" />
-            <text x="240" y="70" class="bar-value" fill="{c.get("accent")}">{devops}%</text>
-
-            <!-- Refactoring -->
-            <text x="0" y="90" class="bar-label">Refactoring (refac)</text>
-            <rect x="130" y="82" width="100" height="7" rx="3.5" fill="{c.get("grid")}" />
-            <rect x="130" y="82" width="{max(int(refactor), 5)}" height="7" rx="3.5" fill="{c.get("status_warn")}" />
-            <text x="240" y="90" class="bar-value" fill="{c.get("status_warn")}">{refactor}%</text>
+            <!-- Row 2 -->
+            <rect class="core core-ok" x="180" y="83" width="12" height="8" rx="1.5"/>
+            <rect class="core core-p1" x="196" y="83" width="12" height="8" rx="1.5"/>
+            <rect class="core core-ok" x="212" y="83" width="12" height="8" rx="1.5"/>
+            <rect class="core core-warn" x="228" y="83" width="12" height="8" rx="1.5"/>
+        </g>
+        
+        <!-- System Status Readings -->
+        <g transform="translate(20, 112)" class="telemetry-readout">
+            <text x="0" y="10">THREAD_POOL: <tspan fill="{c.get("primary")}" font-weight="bold">ACTIVE</tspan></text>
+            <text x="0" y="22">SCHEDULER:   <tspan fill="{c.get("status_ok")}" font-weight="bold">CFS_SCHED</tspan></text>
+            <text x="0" y="34">LATENCY_P99: <tspan fill="{c.get("secondary")}" font-weight="bold">0.82 ms</tspan></text>
+            
+            <text x="145" y="10">SYS_FREQ: <tspan fill="#ffffff" font-weight="bold">4.92GHz</tspan></text>
+            <text x="145" y="22">LOAD_AVG: <tspan fill="{c.get("status_warn")}" font-weight="bold">0.42 / 12%</tspan></text>
+            <text x="145" y="34">NET_BAND: <tspan fill="#ffffff" font-weight="bold">82.1MB/s</tspan></text>
         </g>
     </g>
 </svg>
