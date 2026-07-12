@@ -19,8 +19,8 @@
         </filter>
     </defs>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;900&amp;display=swap');
+    <style><![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Outfit:wght@600;900&display=swap');
         
         .bg { fill: #090a0f; }
         .grid-overlay { fill: url(#grid-k8s); }
@@ -97,7 +97,7 @@
         .status-pulse {
             animation: state-pulse 2s infinite ease-in-out;
         }
-    </style>
+    ]]></style>
 
     <rect width="900" height="420" rx="12" class="bg"/>
     <rect width="900" height="420" rx="12" class="grid-overlay"/>

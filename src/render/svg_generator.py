@@ -59,8 +59,8 @@ class SvgGenerator:
         </linearGradient>
     </defs>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;900&amp;display=swap');
+    <style><![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Outfit:wght@600;900&display=swap');
         
         .bg {{ fill: {c.get("bg")}; }}
         .grid-overlay {{ fill: url(#grid-tel); }}
@@ -121,7 +121,7 @@ class SvgGenerator:
         .status-dot {{
             animation: status-blink 2s infinite;
         }}
-    </style>
+    ]]></style>
 
     <rect width="900" height="260" rx="12" class="bg"/>
     <rect width="900" height="260" rx="12" class="grid-overlay"/>
@@ -219,8 +219,8 @@ class SvgGenerator:
         </filter>
     </defs>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;900&amp;display=swap');
+    <style><![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Outfit:wght@600;900&display=swap');
         
         .bg {{ fill: {c.get("bg")}; }}
         .grid-overlay {{ fill: url(#grid-k8s); }}
@@ -297,7 +297,7 @@ class SvgGenerator:
         .status-pulse {{
             animation: state-pulse 2s infinite ease-in-out;
         }}
-    </style>
+    ]]></style>
 
     <rect width="900" height="420" rx="12" class="bg"/>
     <rect width="900" height="420" rx="12" class="grid-overlay"/>
@@ -458,8 +458,8 @@ class SvgGenerator:
         </linearGradient>
     </defs>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;display=swap');
+    <style><![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
         
         .bg {{ fill: {c.get("bg_terminal")}; }}
         .grid-overlay {{ fill: url(#grid-db); }}
@@ -518,7 +518,7 @@ class SvgGenerator:
             fill: {c.get("text_muted")};
             white-space: nowrap;
         }}
-    </style>
+    ]]></style>
 
     <rect width="900" height="320" rx="8" class="bg"/>
     <rect width="900" height="320" rx="8" class="grid-overlay"/>
@@ -669,8 +669,8 @@ class SvgGenerator:
         </filter>
     </defs>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;900&amp;display=swap');
+    <style><![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Outfit:wght@600;900&display=swap');
         
         .bg {{ fill: {c.get("bg")}; }}
         .grid-overlay {{ fill: url(#grid-contrib); }}
@@ -729,7 +729,7 @@ class SvgGenerator:
         }}
         
 {styles_css}
-    </style>
+    ]]></style>
 
     <rect width="900" height="180" rx="12" class="bg"/>
     <rect width="900" height="180" rx="12" class="grid-overlay"/>
