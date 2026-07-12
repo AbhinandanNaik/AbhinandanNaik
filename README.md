@@ -39,15 +39,10 @@
 </div>
 
 <br/>
-
-<h3 align="center">🏙️ Contribution Architecture</h3>
+<h3 align="center">🏙️ Contribution Matrix</h3>
 <div align="center">
-  <p><i>A 3D isometric projection of system modifications over the past 365 cycles.</i></p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./profile-3d-contrib/profile-night-rainbow.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./profile-3d-contrib/profile-season.svg">
-    <img alt="3D Contribution Graph" src="./profile-3d-contrib/profile-night-rainbow.svg" width="100%" style="border-radius: 8px; border: 1px solid #21262d;" />
-  </picture>
+  <p><i>Holographic grid recording system contributions and repository modification cycles.</i></p>
+  <img src="./assets/contribution_matrix.svg" width="100%" alt="Holographic Contribution Matrix" />
 </div>
 
 <br/>

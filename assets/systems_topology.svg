@@ -124,44 +124,33 @@
     <circle cx="450" cy="210" r="280" class="core-radial" fill="url(#center-glow)" />
 
     <!-- Connection Lines / Infrastructure Links -->
-    <!-- Center to Top (Orchestration/Cloud) -->
     <path d="M 450 210 L 450 70" class="static-link"/>
     <path d="M 450 210 L 450 70" class="link-flow pink-flow" />
 
-    <!-- Center to Right Top (Data Streams) -->
     <path d="M 450 210 L 690 130" class="static-link"/>
     <path d="M 450 210 L 690 130" class="link-flow cyan-flow" />
 
-    <!-- Center to Right Bottom (Storage Engine) -->
     <path d="M 450 210 L 690 290" class="static-link"/>
     <path d="M 450 210 L 690 290" class="link-flow cyan-flow" />
 
-    <!-- Center to Bottom (Interfaces) -->
     <path d="M 450 210 L 450 350" class="static-link"/>
     <path d="M 450 210 L 450 350" class="link-flow pink-flow" />
 
-    <!-- Center to Left Bottom (Execution & Algo Engines) -->
     <path d="M 450 210 L 210 290" class="static-link"/>
     <path d="M 450 210 L 210 290" class="link-flow cyan-flow" />
 
-    <!-- Center to Left Top (Systems Architectures) -->
     <path d="M 450 210 L 210 130" class="static-link"/>
     <path d="M 450 210 L 210 130" class="link-flow cyan-flow" />
 
 
     <!-- 1. Central Core Node: Core Engine Services -->
     <g transform="translate(450, 210)">
-        <!-- Core Radiating Ring -->
         <circle cx="0" cy="0" r="62" fill="none" stroke="#7000ff" stroke-width="1.5" stroke-dasharray="10 6" class="hud-circle-cw" />
         <circle cx="0" cy="0" r="54" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="5 3" class="hud-circle-ccw" />
-        
-        <!-- Glowing Backplate -->
         <circle cx="0" cy="0" r="45" fill="#0d111a" stroke="#7000ff" stroke-width="3" filter="url(#glow-node-cyan)"/>
-        
         <text x="0" y="-5" class="core-text">CORE API</text>
         <text x="0" y="15" class="core-subtext">JAVA / SPRING</text>
     </g>
-
 
     <!-- 2. Peripheral Node: Orchestration & Cloud (Top) -->
     <g transform="translate(450, 70)" class="pulsing-node">
@@ -171,7 +160,6 @@
         <text x="0" y="70" class="node-tech">DOCKER // K8S // AWS</text>
     </g>
 
-
     <!-- 3. Peripheral Node: Data Streams (Right Top) -->
     <g transform="translate(690, 130)" class="pulsing-node">
         <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
@@ -179,7 +167,6 @@
         <text x="0" y="55" class="node-label">EVENT STREAMING</text>
         <text x="0" y="70" class="node-tech">KAFKA // REDIS QUEUE</text>
     </g>
-
 
     <!-- 4. Peripheral Node: Database / Storage Engine (Right Bottom) -->
     <g transform="translate(690, 290)" class="pulsing-node">
@@ -189,7 +176,6 @@
         <text x="0" y="70" class="node-tech">POSTGRESQL // REDIS</text>
     </g>
 
-
     <!-- 5. Peripheral Node: Interface Ports (Bottom) -->
     <g transform="translate(450, 350)" class="pulsing-node">
         <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#ff007f" stroke-width="2" filter="url(#glow-node-pink)"/>
@@ -197,7 +183,6 @@
         <text x="0" y="55" class="node-label">FRONTEND PORTALS</text>
         <text x="0" y="70" class="node-tech">REACT // TS // JS</text>
     </g>
-
 
     <!-- 6. Peripheral Node: Algo Trading & Languages (Left Bottom) -->
     <g transform="translate(210, 290)" class="pulsing-node">
@@ -207,7 +192,6 @@
         <text x="0" y="70" class="node-tech">PYTHON // C# // ALGO</text>
     </g>
 
-
     <!-- 7. Peripheral Node: System Frameworks (Left Top) -->
     <g transform="translate(210, 130)" class="pulsing-node">
         <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
@@ -216,7 +200,7 @@
         <text x="0" y="70" class="node-tech">MICROSERVICES // REST</text>
     </g>
 
-    <!-- High-tech telemetry side panels (Decorative) -->
+    <!-- High-tech telemetry side panels -->
     <g transform="translate(30, 45)" opacity="0.6">
         <path d="M 0 0 L 0 50 L 30 50" fill="none" stroke="#00f0ff" stroke-width="1"/>
         <rect x="5" y="5" width="4" height="4" fill="#ff007f"/>

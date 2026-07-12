@@ -2,6 +2,7 @@ import os
 import json
 import urllib.request
 import urllib.error
+import random
 from datetime import datetime
 
 # ---------------------------------------------------------
@@ -16,7 +17,7 @@ ASSETS_DIR = "assets"
 def fetch_github_data(username):
     token = os.environ.get("GITHUB_TOKEN")
     
-    # GraphQL Query for user statistics
+    # GraphQL Query for user statistics including contribution calendar
     query = """
     query($username: String!) {
       user(login: $username) {
@@ -43,12 +44,35 @@ def fetch_github_data(username):
         contributionsCollection {
           totalCommitContributions
           restrictedContributionsCount
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                contributionLevel
+                date
+                weekday
+              }
+            }
+          }
         }
       }
     }
     """
     
     # Default fallback data if API request fails
+    fallback_weeks = []
+    for w in range(53):
+        days = []
+        for d in range(7):
+            lvl = random.choices(["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"], weights=[60, 20, 10, 7, 3])[0]
+            days.append({
+                "contributionCount": 0 if lvl == "NONE" else random.randint(1, 10),
+                "contributionLevel": lvl,
+                "weekday": d
+            })
+        fallback_weeks.append({"contributionDays": days})
+        
     fallback_data = {
         "name": "Abhinandan Naik",
         "joined_year": "2024",
@@ -56,7 +80,11 @@ def fetch_github_data(username):
         "repo_count": 22,
         "star_count": 12,
         "commit_count": 235,
-        "top_languages": ["Java", "Spring", "Python", "SQL"]
+        "top_languages": ["Java", "Spring", "Python", "SQL"],
+        "contribution_calendar": {
+            "totalContributions": 235,
+            "weeks": fallback_weeks
+        }
     }
     
     if not token:
@@ -103,10 +131,17 @@ def fetch_github_data(username):
             
             # Commits in last year
             commits = user_info["contributionsCollection"]["totalCommitContributions"]
-            # Estimate total commits by adding fallback offset if needed or just use current year
-            # We want to represent his active work, so let's use the fetched count + base index of old commits (e.g. 235)
-            # if fetched is less than 235
             total_commits = max(commits, 235)
+            
+            # Extract Calendar
+            contrib_collection = user_info.get("contributionsCollection", {})
+            calendar_data = contrib_collection.get("contributionCalendar", {})
+            
+            if not calendar_data:
+                calendar_data = {
+                    "totalContributions": total_commits,
+                    "weeks": fallback_weeks
+                }
             
             return {
                 "name": user_info["name"] or username,
@@ -115,7 +150,8 @@ def fetch_github_data(username):
                 "repo_count": user_info["repositories"]["totalCount"],
                 "star_count": total_stars,
                 "commit_count": total_commits,
-                "top_languages": top_langs if top_langs else fallback_data["top_languages"]
+                "top_languages": top_langs if top_langs else fallback_data["top_languages"],
+                "contribution_calendar": calendar_data
             }
             
     except urllib.error.URLError as e:
@@ -295,7 +331,6 @@ def generate_header_svg(data, filepath):
         <line x1="210" y1="0" x2="210" y2="150" stroke="#161b22" stroke-dasharray="3 3"/>
 
         <!-- Animated Scrolling Chart Data Area & Line -->
-        <!-- The path contains repeating structures every 300px for a seamless loop -->
         <g clip-path="url(#chart-clip)">
             <!-- Clip Path to avoid rendering outside the chart box -->
             <clipPath id="chart-clip">
@@ -340,7 +375,6 @@ def generate_header_svg(data, filepath):
 
 
 def generate_topology_svg(filepath):
-    # Systems Architecture / Skills Topology SVG
     svg_template = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="100%" height="420">
     <defs>
         <!-- Background Grid Pattern -->
@@ -467,44 +501,33 @@ def generate_topology_svg(filepath):
     <circle cx="450" cy="210" r="280" class="core-radial" fill="url(#center-glow)" />
 
     <!-- Connection Lines / Infrastructure Links -->
-    <!-- Center to Top (Orchestration/Cloud) -->
     <path d="M 450 210 L 450 70" class="static-link"/>
     <path d="M 450 210 L 450 70" class="link-flow pink-flow" />
 
-    <!-- Center to Right Top (Data Streams) -->
     <path d="M 450 210 L 690 130" class="static-link"/>
     <path d="M 450 210 L 690 130" class="link-flow cyan-flow" />
 
-    <!-- Center to Right Bottom (Storage Engine) -->
     <path d="M 450 210 L 690 290" class="static-link"/>
     <path d="M 450 210 L 690 290" class="link-flow cyan-flow" />
 
-    <!-- Center to Bottom (Interfaces) -->
     <path d="M 450 210 L 450 350" class="static-link"/>
     <path d="M 450 210 L 450 350" class="link-flow pink-flow" />
 
-    <!-- Center to Left Bottom (Execution & Algo Engines) -->
     <path d="M 450 210 L 210 290" class="static-link"/>
     <path d="M 450 210 L 210 290" class="link-flow cyan-flow" />
 
-    <!-- Center to Left Top (Systems Architectures) -->
     <path d="M 450 210 L 210 130" class="static-link"/>
     <path d="M 450 210 L 210 130" class="link-flow cyan-flow" />
 
 
     <!-- 1. Central Core Node: Core Engine Services -->
     <g transform="translate(450, 210)">
-        <!-- Core Radiating Ring -->
         <circle cx="0" cy="0" r="62" fill="none" stroke="#7000ff" stroke-width="1.5" stroke-dasharray="10 6" class="hud-circle-cw" />
         <circle cx="0" cy="0" r="54" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="5 3" class="hud-circle-ccw" />
-        
-        <!-- Glowing Backplate -->
         <circle cx="0" cy="0" r="45" fill="#0d111a" stroke="#7000ff" stroke-width="3" filter="url(#glow-node-cyan)"/>
-        
         <text x="0" y="-5" class="core-text">CORE API</text>
         <text x="0" y="15" class="core-subtext">JAVA / SPRING</text>
     </g>
-
 
     <!-- 2. Peripheral Node: Orchestration & Cloud (Top) -->
     <g transform="translate(450, 70)" class="pulsing-node">
@@ -514,7 +537,6 @@ def generate_topology_svg(filepath):
         <text x="0" y="70" class="node-tech">DOCKER // K8S // AWS</text>
     </g>
 
-
     <!-- 3. Peripheral Node: Data Streams (Right Top) -->
     <g transform="translate(690, 130)" class="pulsing-node">
         <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
@@ -522,7 +544,6 @@ def generate_topology_svg(filepath):
         <text x="0" y="55" class="node-label">EVENT STREAMING</text>
         <text x="0" y="70" class="node-tech">KAFKA // REDIS QUEUE</text>
     </g>
-
 
     <!-- 4. Peripheral Node: Database / Storage Engine (Right Bottom) -->
     <g transform="translate(690, 290)" class="pulsing-node">
@@ -532,7 +553,6 @@ def generate_topology_svg(filepath):
         <text x="0" y="70" class="node-tech">POSTGRESQL // REDIS</text>
     </g>
 
-
     <!-- 5. Peripheral Node: Interface Ports (Bottom) -->
     <g transform="translate(450, 350)" class="pulsing-node">
         <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#ff007f" stroke-width="2" filter="url(#glow-node-pink)"/>
@@ -540,7 +560,6 @@ def generate_topology_svg(filepath):
         <text x="0" y="55" class="node-label">FRONTEND PORTALS</text>
         <text x="0" y="70" class="node-tech">REACT // TS // JS</text>
     </g>
-
 
     <!-- 6. Peripheral Node: Algo Trading & Languages (Left Bottom) -->
     <g transform="translate(210, 290)" class="pulsing-node">
@@ -550,7 +569,6 @@ def generate_topology_svg(filepath):
         <text x="0" y="70" class="node-tech">PYTHON // C# // ALGO</text>
     </g>
 
-
     <!-- 7. Peripheral Node: System Frameworks (Left Top) -->
     <g transform="translate(210, 130)" class="pulsing-node">
         <circle cx="0" cy="0" r="32" fill="#0d111a" stroke="#00f0ff" stroke-width="2" filter="url(#glow-node-cyan)"/>
@@ -559,7 +577,7 @@ def generate_topology_svg(filepath):
         <text x="0" y="70" class="node-tech">MICROSERVICES // REST</text>
     </g>
 
-    <!-- High-tech telemetry side panels (Decorative) -->
+    <!-- High-tech telemetry side panels -->
     <g transform="translate(30, 45)" opacity="0.6">
         <path d="M 0 0 L 0 50 L 30 50" fill="none" stroke="#00f0ff" stroke-width="1"/>
         <rect x="5" y="5" width="4" height="4" fill="#ff007f"/>
@@ -582,7 +600,6 @@ def generate_topology_svg(filepath):
 
 
 def generate_terminal_stats_svg(data, filepath):
-    # Terminal Statistics dashboard with live stats and rolling log simulation
     joined_year = data["joined_year"]
     repos = data["repo_count"]
     stars = data["star_count"]
@@ -704,7 +721,6 @@ def generate_terminal_stats_svg(data, filepath):
             <text x="0" y="0" class="prompt">abhinandan@sys-core:~$ <tspan class="cmd">./fetch_system_metrics.sh</tspan></text>
             
             <g transform="translate(10, 30)">
-                <!-- Grid metrics -->
                 <text x="0" y="0" class="stat-label">OPERATOR_ID:</text>
                 <text x="180" y="0" class="stat-val">AbhinandanNaik</text>
 
@@ -739,8 +755,6 @@ def generate_terminal_stats_svg(data, filepath):
                     <rect x="0" y="0" width="370" height="180"/>
                 </clipPath>
                 
-                <!-- Moving Logs Group -->
-                <!-- Translates dynamically via step keyframes -->
                 <g class="scrolling-logs">
                     <!-- Frame 1 log lines -->
                     <text x="0" y="20" class="log-line"><tspan fill="#58a6ff">[INFO]</tspan> spring-gateway-service starting...</text>
@@ -780,19 +794,180 @@ def generate_terminal_stats_svg(data, filepath):
     print(f"Generated stats terminal SVG at {filepath}")
 
 
+def generate_contribution_matrix_svg(data, filepath):
+    weeks = data.get("contribution_calendar", {}).get("weeks", [])
+    total_contribs = data.get("contribution_calendar", {}).get("totalContributions", data["commit_count"])
+    
+    # Grid positioning configuration
+    start_x = 240
+    start_y = 55
+    spacing = 11.5
+    
+    cells_svg = []
+    styles = []
+    
+    # Cyberpunk status coloring palette
+    level_colors = {
+        "NONE": "#131621",
+        "FIRST_QUARTILE": "#004d61",
+        "SECOND_QUARTILE": "#008fa8",
+        "THIRD_QUARTILE": "#7000ff",
+        "FOURTH_QUARTILE": "#ff007f"
+    }
+    
+    for w_idx, week in enumerate(weeks):
+        for day in week.get("contributionDays", []):
+            d_idx = day.get("weekday", 0)
+            level = day.get("contributionLevel", "NONE")
+            color = level_colors.get(level, "#131621")
+            
+            x = start_x + w_idx * spacing
+            y = start_y + d_idx * spacing
+            
+            cells_svg.append(
+                f'<rect class="cell cell-col-{w_idx}" x="{x}" y="{y}" width="9" height="9" rx="1.5" ry="1.5" fill="{color}" style="color: {color};" />'
+            )
+            
+        # Synchronized scanline delays (staggered across 53 weeks over 6 seconds of an 8-second animation)
+        delay = (w_idx / 53) * 6.0
+        styles.append(f'        .cell-col-{w_idx} {{ animation: cell-glow 8s infinite; animation-delay: {delay:.2f}s; }}')
+
+    styles_css = "\n".join(styles)
+    cells_str = "\n".join(cells_svg)
+    
+    svg_template = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" width="100%" height="180">
+    <defs>
+        <pattern id="grid-contrib" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#12161f" stroke-width="1"/>
+        </pattern>
+        <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;900&amp;display=swap');
+        
+        .bg {{
+            fill: #090a0f;
+        }}
+        .grid-overlay {{
+            fill: url(#grid-contrib);
+        }}
+        .title {{
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            fill: #ffffff;
+            letter-spacing: 1px;
+        }}
+        .subtitle {{
+            font-family: 'Fira Code', monospace;
+            font-size: 9px;
+            fill: #8b949e;
+            letter-spacing: 1px;
+        }}
+        .label {{
+            font-family: 'Fira Code', monospace;
+            font-size: 8px;
+            fill: #58a6ff;
+        }}
+        .value {{
+            font-family: 'Fira Code', monospace;
+            font-size: 8px;
+            fill: #39ff14;
+            font-weight: bold;
+        }}
+        .grid-label {{
+            font-family: 'Fira Code', monospace;
+            font-size: 8px;
+            fill: #8b949e;
+        }}
+        
+        /* Sweep animation for scanner line */
+        @keyframes sweep-line {{
+            0% {{ transform: translateX(0px); opacity: 0; }}
+            5% {{ opacity: 0.8; }}
+            75% {{ opacity: 0.8; }}
+            80% {{ transform: translateX(610px); opacity: 0; }}
+            100% {{ transform: translateX(610px); opacity: 0; }}
+        }}
+        .scanner-bar {{
+            animation: sweep-line 8s infinite ease-in-out;
+        }}
+        
+        /* Cell sweep glow animation */
+        @keyframes cell-glow {{
+            0%, 100% {{ opacity: 0.6; }}
+            8% {{ opacity: 1.0; filter: drop-shadow(0 0 3px currentColor); }}
+            20% {{ opacity: 0.6; }}
+        }}
+        
+        .cell {{
+            opacity: 0.6;
+        }}
+        
+{styles_css}
+    </style>
+
+    <!-- Background -->
+    <rect width="900" height="180" rx="12" class="bg"/>
+    <rect width="900" height="180" rx="12" class="grid-overlay"/>
+
+    <!-- Telemetry Left Readout Panel -->
+    <g transform="translate(40, 40)">
+        <path d="M-15 -10 L15 -10 M-15 -10 L-15 25" stroke="#ff007f" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <text x="0" y="5" class="title">CONTRIBUTION GRID</text>
+        <text x="0" y="20" class="subtitle">HOLOGRAPHIC telemetry matrix</text>
+        
+        <g transform="translate(0, 45)">
+            <text x="0" y="0" class="label">SCAN_CYCLE: <tspan class="value">365 DAYS</tspan></text>
+            <text x="0" y="15" class="label">GRID_SYNC: <tspan class="value">SUCCESS</tspan></text>
+            <text x="0" y="30" class="label">INTEGRITY: <tspan class="value">100.0%</tspan></text>
+            <text x="0" y="45" class="label">CONTRIBS:  <tspan class="value" fill="#00f0ff">{total_contribs} NODES</tspan></text>
+        </g>
+    </g>
+
+    <!-- Grid Labels (Weekdays) -->
+    <text x="218" y="62" class="grid-label">Sun</text>
+    <text x="218" y="85" class="grid-label">Tue</text>
+    <text x="218" y="108" class="grid-label">Thu</text>
+    <text x="218" y="131" class="grid-label">Sat</text>
+
+    <!-- Grid Cells -->
+    <g>
+{cells_str}
+    </g>
+
+    <!-- Scanning Holographic Sweep Bar -->
+    <rect class="scanner-bar" x="237" y="50" width="3" height="85" fill="#00f0ff" filter="url(#glow-cyan)" opacity="0.8"/>
+</svg>
+"""
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(svg_template)
+    print(f"Generated contribution matrix SVG at {filepath}")
+
+
 # ---------------------------------------------------------
 # 4. Main Execution
 # ---------------------------------------------------------
 if __name__ == "__main__":
     print(f"Executing stats dashboard SVG generation for operator {GITHUB_USERNAME}...")
     stats = fetch_github_data(GITHUB_USERNAME)
-    print("Fetched statistics:", stats)
+    print("Fetched statistics:", {k: v for k, v in stats.items() if k != "contribution_calendar"})
     
     header_path = os.path.join(ASSETS_DIR, "header_animation.svg")
     topology_path = os.path.join(ASSETS_DIR, "systems_topology.svg")
     stats_path = os.path.join(ASSETS_DIR, "terminal_stats.svg")
+    contrib_path = os.path.join(ASSETS_DIR, "contribution_matrix.svg")
     
     generate_header_svg(stats, header_path)
     generate_topology_svg(topology_path)
     generate_terminal_stats_svg(stats, stats_path)
+    generate_contribution_matrix_svg(stats, contrib_path)
     print("All assets compiled successfully!")

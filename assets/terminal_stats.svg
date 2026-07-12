@@ -113,7 +113,6 @@
             <text x="0" y="0" class="prompt">abhinandan@sys-core:~$ <tspan class="cmd">./fetch_system_metrics.sh</tspan></text>
             
             <g transform="translate(10, 30)">
-                <!-- Grid metrics -->
                 <text x="0" y="0" class="stat-label">OPERATOR_ID:</text>
                 <text x="180" y="0" class="stat-val">AbhinandanNaik</text>
 
@@ -148,8 +147,6 @@
                     <rect x="0" y="0" width="370" height="180"/>
                 </clipPath>
                 
-                <!-- Moving Logs Group -->
-                <!-- Translates dynamically via step keyframes -->
                 <g class="scrolling-logs">
                     <!-- Frame 1 log lines -->
                     <text x="0" y="20" class="log-line"><tspan fill="#58a6ff">[INFO]</tspan> spring-gateway-service starting...</text>
