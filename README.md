@@ -1,6 +1,6 @@
 <div align="center">
-  <!-- Cyberpunk Animated HUD Header Banner -->
-  <img src="./assets/header_animation.svg" width="100%" alt="Abhinandan Naik Systems Console" />
+  <!-- Cyberpunk Conventional Commits Telemetry Header -->
+  <img src="./assets/git_telemetry.svg" width="100%" alt="Abhinandan Naik Git Telemetry Console" />
 </div>
 
 <br/>
@@ -24,21 +24,22 @@
 
 <br/>
 
-<h3 align="center">🔮 Skill Topology</h3>
+<h3 align="center">🔮 Skill Topology (Kubernetes Pod Fabric)</h3>
 <div align="center">
-  <p><i>System infrastructure connections mapping my technology stack.</i></p>
-  <img src="./assets/systems_topology.svg" width="100%" alt="Systems Topology Map" />
+  <p><i>Visualizing system connections, database replication, and broker clusters.</i></p>
+  <img src="./assets/kubernetes_console.svg" width="100%" alt="Kubernetes Pod Topology Map" />
 </div>
 
 <br/>
 
-<h3 align="center">📊 Telemetry Dashboard</h3>
+<h3 align="center">📊 Telemetry Dashboard (Developer Stats &amp; Algorithmic Ratios)</h3>
 <div align="center">
-  <p><i>Live telemetry logs and GitHub statistics compiled dynamically.</i></p>
-  <img src="./assets/terminal_stats.svg" width="100%" alt="Live Telemetry Stats Console" />
+  <p><i>Live telemetry metrics, commit synchronizations, and LeetCode problem analytics.</i></p>
+  <img src="./assets/stats_dashboard.svg" width="100%" alt="Live Telemetry Stats Console" />
 </div>
 
 <br/>
+
 <h3 align="center">🏙️ Contribution Matrix</h3>
 <div align="center">
   <p><i>Holographic grid recording system contributions and repository modification cycles.</i></p>

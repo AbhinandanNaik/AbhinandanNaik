@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="100%" height="320">
+    <defs>
+        <pattern id="grid-db" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#141923" stroke-width="1"/>
+        </pattern>
+        <linearGradient id="db-hdr-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#12161f"/>
+            <stop offset="100%" stop-color="#030508"/>
+        </linearGradient>
+    </defs>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&amp;display=swap');
+        
+        .bg { fill: #030508; }
+        .grid-overlay { fill: url(#grid-db); }
+        
+        .db-hdr {
+            font-family: 'Fira Code', monospace;
+            font-size: 11px;
+            fill: #8b949e;
+            font-weight: bold;
+        }
+        .db-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            fill: #ff007f;
+            font-weight: bold;
+        }
+        
+        .stat-lbl {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            fill: #ffffff;
+        }
+        .stat-number {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            fill: #58a6ff;
+            font-weight: bold;
+        }
+        
+        .lc-title {
+            font-family: 'Fira Code', monospace;
+            font-size: 12px;
+            fill: #00f0ff;
+            font-weight: bold;
+        }
+        .lc-lbl {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            fill: #8b949e;
+        }
+        
+        @keyframes scroll-logs {
+            0%, 15% { transform: translateY(0px); }
+            20%, 35% { transform: translateY(-18px); }
+            40%, 55% { transform: translateY(-36px); }
+            60%, 75% { transform: translateY(-54px); }
+            80%, 95% { transform: translateY(-72px); }
+            100% { transform: translateY(-90px); }
+        }
+        .log-scroller {
+            animation: scroll-logs 14s steps(5) infinite;
+        }
+        .log-row {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            fill: #8b949e;
+            white-space: nowrap;
+        }
+    </style>
+
+    <rect width="900" height="320" rx="8" class="bg"/>
+    <rect width="900" height="320" rx="8" class="grid-overlay"/>
+    <rect width="898" height="318" x="1" y="1" rx="8" fill="none" stroke="#141923" stroke-width="1.5"/>
+
+    <!-- Header bar -->
+    <path d="M 1 8 L 1 30 L 899 30 L 899 8 A 7 7 0 0 0 892 1 L 8 1 A 7 7 0 0 0 1 8 Z" fill="url(#db-hdr-grad)" stroke="#141923" stroke-width="1"/>
+    <circle cx="20" cy="15" r="5" fill="#ff007f"/>
+    <circle cx="36" cy="15" r="5" fill="#ffbd2e"/>
+    <circle cx="52" cy="15" r="5" fill="#39ff14"/>
+    <text x="450" y="19" class="db-hdr" text-anchor="middle">abhinandan@systems-metrics:~ (profile_telemetry)</text>
+
+    <!-- Content partition panels -->
+    <g transform="translate(30, 60)">
+        
+        <!-- Left Panel: Core Dev Metrics -->
+        <g>
+            <text x="0" y="0" class="db-title">METRICS://CORE_INDEX</text>
+            
+            <g transform="translate(10, 25)">
+                <text x="0" y="0" class="stat-lbl">USER_ID:</text>
+                <text x="180" y="0" class="stat-number">AbhinandanNaik</text>
+
+                <text x="0" y="24" class="stat-lbl">SYSTEM_UPTIME:</text>
+                <text x="180" y="24" class="stat-number">2 Years (2024)</text>
+
+                <text x="0" y="48" class="stat-lbl">REPOS_LOADED:</text>
+                <text x="180" y="48" class="stat-number">22 Active Clusters</text>
+
+                <text x="0" y="72" class="stat-lbl">SYNC_COMMITS:</text>
+                <text x="180" y="72" class="stat-number" fill="#39ff14">235 Transports</text>
+
+                <text x="0" y="96" class="stat-lbl">RATING_REPUTATION:</text>
+                <text x="180" y="96" class="stat-number">12 Stars // 5 Followers</text>
+            </g>
+        </g>
+
+        <!-- Divider -->
+        <line x1="420" y1="-15" x2="420" y2="230" stroke="#141923" stroke-width="1.5"/>
+
+        <!-- Right Panel: LeetCode Algorithmic stats -->
+        <g transform="translate(450, 0)">
+            <text x="0" y="0" class="lc-title">METRICS://ALGO_SOLVED</text>
+            <text x="350" y="0" class="stat-number" fill="#39ff14">135 Solved</text>
+            
+            <g transform="translate(10, 25)">
+                <!-- Easy -->
+                <text x="0" y="10" class="lc-lbl">Easy Problems</text>
+                <rect x="140" y="2" width="180" height="7" rx="3.5" fill="#141923" />
+                <rect x="140" y="2" width="53" height="7" rx="3.5" fill="#39ff14" />
+                <text x="330" y="10" class="stat-number">45</text>
+
+                <!-- Medium -->
+                <text x="0" y="34" class="lc-lbl">Medium Problems</text>
+                <rect x="140" y="26" width="180" height="7" rx="3.5" fill="#141923" />
+                <rect x="140" y="26" width="85" height="7" rx="3.5" fill="#ffbd2e" />
+                <text x="330" y="34" class="stat-number">72</text>
+
+                <!-- Hard -->
+                <text x="0" y="58" class="lc-lbl">Hard Problems</text>
+                <rect x="140" y="50" width="180" height="7" rx="3.5" fill="#141923" />
+                <rect x="140" y="50" width="21" height="7" rx="3.5" fill="#ff007f" />
+                <text x="330" y="58" class="stat-number">18</text>
+            </g>
+
+            <!-- Rolling algorithmic logs buffer -->
+            <g transform="translate(10, 110)">
+                <line x1="-10" y1="0" x2="380" y2="0" stroke="#141923" stroke-width="1"/>
+                <g clip-path="url(#lc-log-clip)" transform="translate(0, 10)">
+                    <clipPath id="lc-log-clip">
+                        <rect x="0" y="0" width="380" height="90"/>
+                    </clipPath>
+                    <g class="log-scroller">
+                        <text x="0" y="10" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Binary search optimizer: completed (8ms)</text>
+                        <text x="0" y="28" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Dijkstra routing nodes traversal: OK</text>
+                        <text x="0" y="46" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Matrix chain dynamic planning complete</text>
+                        <text x="0" y="64" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Fast Fourier algorithm signal parsing OK</text>
+                        <text x="0" y="82" class="log-row"><tspan fill="#39ff14">[AC]</tspan> LRU cache page eviction test: executed</text>
+                        
+                        <text x="0" y="100" class="log-row"><tspan fill="#39ff14">[AC]</tspan> AVL self-balancing tree rotate operation: OK</text>
+                        <text x="0" y="118" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Max heap priority queue pop complexity: verified</text>
+                        <text x="0" y="136" class="log-row"><tspan fill="#39ff14">[AC]</tspan> A* heuristics navigation grid: path calculated</text>
+                        <text x="0" y="154" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Rabin-Karp substring hashing pattern matching: OK</text>
+                        <text x="0" y="172" class="log-row"><tspan fill="#39ff14">[AC]</tspan> Thread pool executor concurrency threshold: verified</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

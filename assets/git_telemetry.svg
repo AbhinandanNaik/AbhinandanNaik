@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="100%" height="260">
+    <defs>
+        <pattern id="grid-tel" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#141923" stroke-width="1"/>
+        </pattern>
+        <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <filter id="glow-pink" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="gradient-title" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00f0ff"/>
+            <stop offset="50%" stop-color="#7000ff"/>
+            <stop offset="100%" stop-color="#ff007f"/>
+        </linearGradient>
+    </defs>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;family=Outfit:wght@600;900&amp;display=swap');
+        
+        .bg { fill: #090a0f; }
+        .grid-overlay { fill: url(#grid-tel); }
+        
+        .title {
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            fill: url(#gradient-title);
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-family: 'Fira Code', monospace;
+            font-size: 13px;
+            fill: #8b949e;
+            letter-spacing: 2px;
+        }
+        .section-hdr {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            fill: #ffffff;
+            letter-spacing: 1px;
+        }
+        
+        /* Bar chart fonts */
+        .bar-label {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            fill: #8b949e;
+        }
+        .bar-value {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            fill: #00f0ff;
+            font-weight: bold;
+        }
+        
+        .pill-label {
+            font-family: 'Fira Code', monospace;
+            font-size: 10px;
+            fill: #58a6ff;
+        }
+        
+        @keyframes rotate-hud {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .hud-gear {
+            transform-origin: 430px 130px;
+            animation: rotate-hud 25s linear infinite;
+        }
+        
+        @keyframes status-blink {
+            0%, 100% { fill: #39ff14; filter: drop-shadow(0 0 2px #39ff14); }
+            50% { fill: #12161f; filter: none; }
+        }
+        .status-dot {
+            animation: status-blink 2s infinite;
+        }
+    </style>
+
+    <rect width="900" height="260" rx="12" class="bg"/>
+    <rect width="900" height="260" rx="12" class="grid-overlay"/>
+
+    <!-- Decorative HUD Rotating Rings -->
+    <g class="hud-gear" opacity="0.15">
+        <circle cx="430" cy="130" r="70" fill="none" stroke="#7000ff" stroke-width="1.5" stroke-dasharray="10 8"/>
+        <circle cx="430" cy="130" r="55" fill="none" stroke="#00f0ff" stroke-width="1" stroke-dasharray="4 4"/>
+    </g>
+
+    <!-- Left Frame: Developer Credentials -->
+    <g transform="translate(60, 65)">
+        <path d="M-20 -15 L30 -15 M-20 -15 L-20 30" stroke="#ff007f" stroke-width="2" fill="none" opacity="0.8"/>
+        <text x="0" y="20" class="title">ABHINANDAN NAIK</text>
+        <text x="0" y="45" class="subtitle">BACKEND ENGINEER // DEVSECOPS PIPELINES</text>
+        
+        <!-- Live Status Row -->
+        <g transform="translate(0, 80)">
+            <rect x="0" y="0" width="130" height="24" rx="12" fill="#030508" stroke="#141923" stroke-width="1"/>
+            <circle cx="15" cy="12" r="4.5" class="status-dot"/>
+            <text x="28" y="16" class="pill-label">PIPELINE: <tspan fill="#39ff14" font-weight="bold">ACTIVE</tspan></text>
+            
+            <rect x="145" y="0" width="135" height="24" rx="12" fill="#030508" stroke="#141923" stroke-width="1"/>
+            <circle cx="160" cy="12" r="4" fill="#00f0ff" filter="url(#glow-cyan)"/>
+            <text x="173" y="16" class="pill-label">THEME: <tspan fill="#00f0ff" font-weight="bold">CYBERPUNK</tspan></text>
+        </g>
+    </g>
+
+    <!-- Right Frame: Conventional Commit Telemetry -->
+    <g transform="translate(540, 45)">
+        <rect x="0" y="0" width="300" height="170" fill="#030508" stroke="#141923" stroke-width="1.5" rx="8" opacity="0.8"/>
+        
+        <text x="20" y="25" class="section-hdr">ENGINEERING COMMITS TELEMETRY</text>
+        
+        <!-- Progress Bars representing conventional commits -->
+        <g transform="translate(20, 45)">
+            <!-- Features -->
+            <text x="0" y="10" class="bar-label">Features (feat)</text>
+            <rect x="130" y="2" width="100" height="7" rx="3.5" fill="#141923" />
+            <rect x="130" y="2" width="5" height="7" rx="3.5" fill="#00f0ff" filter="url(#glow-cyan)"/>
+            <text x="240" y="10" class="bar-value">4%</text>
+            
+            <!-- Bugfixes -->
+            <text x="0" y="30" class="bar-label">Bugfixes (fix)</text>
+            <rect x="130" y="22" width="100" height="7" rx="3.5" fill="#141923" />
+            <rect x="130" y="22" width="5" height="7" rx="3.5" fill="#39ff14" />
+            <text x="240" y="30" class="bar-value" fill="#39ff14">1%</text>
+            
+            <!-- Performance -->
+            <text x="0" y="50" class="bar-label">Performance (perf)</text>
+            <rect x="130" y="42" width="100" height="7" rx="3.5" fill="#141923" />
+            <rect x="130" y="42" width="5" height="7" rx="3.5" fill="#ff007f" filter="url(#glow-pink)"/>
+            <text x="240" y="50" class="bar-value" fill="#ff007f">0%</text>
+
+            <!-- DevOps -->
+            <text x="0" y="70" class="bar-label">DevOps (ci/cd)</text>
+            <rect x="130" y="62" width="100" height="7" rx="3.5" fill="#141923" />
+            <rect x="130" y="62" width="5" height="7" rx="3.5" fill="#7000ff" />
+            <text x="240" y="70" class="bar-value" fill="#7000ff">4%</text>
+
+            <!-- Refactoring -->
+            <text x="0" y="90" class="bar-label">Refactoring (refac)</text>
+            <rect x="130" y="82" width="100" height="7" rx="3.5" fill="#141923" />
+            <rect x="130" y="82" width="5" height="7" rx="3.5" fill="#ffbd2e" />
+            <text x="240" y="90" class="bar-value" fill="#ffbd2e">0%</text>
+        </g>
+    </g>
+</svg>
