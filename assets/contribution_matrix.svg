@@ -516,6 +516,7 @@
 <rect class="cell cell-col-51" x="826.5" y="112.5" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
 <rect class="cell cell-col-51" x="826.5" y="124.0" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
 <rect class="cell cell-col-52" x="838.0" y="55.0" width="9" height="9" rx="1.5" ry="1.5" fill="#ff007f" style="color: #ff007f;" />
+<rect class="cell cell-col-52" x="838.0" y="66.5" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
     </g>
 
     <!-- Scanning Holographic Sweep Bar -->
