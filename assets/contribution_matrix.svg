@@ -139,7 +139,7 @@
             <text x="0" y="0" class="label">SCAN_CYCLE: <tspan class="value">365 DAYS</tspan></text>
             <text x="0" y="15" class="label">GRID_SYNC:  <tspan class="value">SUCCESS</tspan></text>
             <text x="0" y="30" class="label">INTEGRITY:  <tspan class="value">100.0%</tspan></text>
-            <text x="0" y="45" class="label">CONTRIBS:   <tspan class="value" fill="#00f0ff">364 NODES</tspan></text>
+            <text x="0" y="45" class="label">CONTRIBS:   <tspan class="value" fill="#00f0ff">346 NODES</tspan></text>
         </g>
     </g>
 
@@ -515,7 +515,8 @@
 <rect class="cell cell-col-51" x="826.5" y="101.0" width="9" height="9" rx="1.5" ry="1.5" fill="#12161f" style="color: #12161f;" />
 <rect class="cell cell-col-51" x="826.5" y="112.5" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
 <rect class="cell cell-col-51" x="826.5" y="124.0" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
-<rect class="cell cell-col-52" x="838.0" y="55.0" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
+<rect class="cell cell-col-52" x="838.0" y="55.0" width="9" height="9" rx="1.5" ry="1.5" fill="#12161f" style="color: #12161f;" />
+<rect class="cell cell-col-52" x="838.0" y="66.5" width="9" height="9" rx="1.5" ry="1.5" fill="#141923" style="color: #141923;" />
     </g>
 
     <!-- Scanning Holographic Sweep Bar -->
